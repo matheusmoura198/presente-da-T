@@ -30,8 +30,6 @@ for (let i = 0; i < quantidade; i++) {
     heart.appendChild(palavra)
 }
 
-const ultimaPalavra = heart.lastElementChild;
-
-ultimaPalavra.addEventListener("animationend", () => {
+setTimeout(() => {
     heart.classList.add("girando");
-});
+}, 4500);
