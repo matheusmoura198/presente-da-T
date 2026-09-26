@@ -78,6 +78,7 @@ h1 {
 
 #heart.girando {
     animation: girar 5s linear infinite;
+    transform-origin: center center;
 }
 
 @keyframes girar {
