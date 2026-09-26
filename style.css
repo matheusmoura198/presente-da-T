@@ -75,3 +75,17 @@ h1 {
         opacity: 1;
         transform: translate(-50%, -50%) rotateZ(-30deg) scale(1);
     }
+
+#heart.girando {
+    animation: girar 5s linear infinite;
+}
+
+@keyframes girar {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
