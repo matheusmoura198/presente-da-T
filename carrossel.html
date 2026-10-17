@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nossa história</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="palco">
+    <h1 id="titulo"></h1>
+    <div class="carrossel-wrap">
+      <div class="carrossel" id="carrossel"><div class="trilho" id="trilho"></div></div>
+      <div class="controles">
+        <button class="seta" id="anterior" type="button" aria-label="Foto anterior">&#8592;</button>
+        <span class="contador" id="contador"></span>
+        <button class="seta" id="proxima" type="button" aria-label="Próxima foto">&#8594;</button>
+      </div>
+    </div>
+    <a class="botao" id="continuar" href="carta.html"></a>
+  </main>
+  <script src="config.js"></script>
+  <script src="common.js"></script>
+  <script src="carrossel.js"></script>
+</body>
+</html>

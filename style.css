@@ -1,91 +1,172 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+:root {
+  --preto: #000;
+  --superficie: #120a0e;
+  --rosa: #f0a6c8;
+  --rosa-forte: #ea80b0;
+  --rosa-vivo: #ff5fa2;
+  --papel: #fbf6f8;
+  --tinta: #3a2a32;
+  --titulo: "Playfair Display", Georgia, serif;
+  --mao: "Caveat", "Segoe Print", cursive;
 }
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
 
 body {
-    background-color: black;
-    color: white;
-    min-height: 100vh;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    overflow: hidden;
+  background: var(--preto);
+  color: #fff;
+  font-family: Georgia, "Times New Roman", serif;
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow-x: hidden;
 }
 
-.container {
-    width: 100%;
-    height: 100vh;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+h1, h2 {
+  font-family: var(--titulo);
+  font-weight: 700;
+  color: var(--rosa);
+  text-shadow: 0 0 14px rgba(240, 166, 200, .55);
+  text-align: center;
+  line-height: 1.2;
 }
 
-h1 {
-    position: absolute;
-    top: 60px;
-
-    font-size: 2.5rem;
-    font-family: Arial, sans-serif;
-
-    color: #f0a6c8;
-    text-shadow: 0 0 10px #f0a6c8;
+/* palco centralizado usado nas páginas curtas */
+.palco {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  padding: 32px 20px;
 }
 
-#heart {
-    position: relative;
-
-    width: 600px;
-    height: 600px;
+.botao {
+  display: inline-block;
+  font-family: var(--titulo);
+  font-size: 1.15rem;
+  color: var(--preto);
+  background: var(--rosa);
+  border: 0;
+  border-radius: 999px;
+  padding: 14px 34px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background .2s, transform .2s;
 }
+.botao:hover { background: var(--rosa-vivo); transform: translateY(-2px); }
+.botao:focus-visible, .seta:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+.botao.vazado { background: transparent; color: var(--rosa); border: 2px solid var(--rosa); }
+.botao.vazado:hover { background: var(--rosa); color: var(--preto); }
 
+.escondido { display: none !important; }
+
+/* ---------- PÁGINA 1: coração ---------- */
+.inicio h1 {
+  position: absolute;
+  top: clamp(24px, 6vh, 60px);
+  left: 0; right: 0;
+  padding: 0 20px;
+  font-size: clamp(1.4rem, 5vw, 2.5rem);
+}
+#heart { position: relative; width: 100%; height: 70vh; }
 .love_word {
-    position: absolute;
-
-    color: #ea80b0;
-
-    font-size: 1.4rem;
-
-    transform: translate(-50%, -50%) rotateZ(-30deg);
-
-    text-shadow: 0 0 10px #ffffff;
-
-    letter-spacing: 2px;
-
-    white-space: nowrap;
-
-    opacity: 0;
-
-    animation: aparecer 1s forwards;
+  position: absolute;
+  color: var(--rosa-forte);
+  letter-spacing: 2px;
+  white-space: nowrap;
+  text-shadow: 0 0 10px #fff;
+  opacity: 0;
+  transform: translate(-50%, -50%) rotate(-30deg) scale(0);
+  animation: aparecer 1s forwards;
 }
-
 @keyframes aparecer {
-
-    from {
-        opacity: 0;
-        transform: translate(-50%, -50%) rotateZ(-30deg) scale(0);
-    }
-
-    to {
-        opacity: 1;
-        transform: translate(-50%, -50%) rotateZ(-30deg) scale(1);
-    }
-
-#heart.girando {
-    animation: girar 5s linear infinite;
+  to { opacity: 1; transform: translate(-50%, -50%) rotate(-30deg) scale(1); }
 }
+.inicio .botao {
+  position: absolute;
+  bottom: clamp(24px, 7vh, 70px);
+  opacity: 0;
+  animation: surgir 1s 4.2s forwards;
+}
+@keyframes surgir { to { opacity: 1; } }
 
-@keyframes girar {
-    0% {
-        transform: rotate(0deg);
-    }
+/* ---------- PÁGINA 2: pergunta ---------- */
+.pergunta h1 { font-size: clamp(2rem, 8vw, 3.4rem); }
+.opcoes { display: flex; gap: 22px; align-items: center; min-height: 56px; }
+#nao { transition: left .25s ease, top .25s ease; }
+#nao.solto { position: fixed; z-index: 10; }
+.resposta { max-width: 460px; text-align: center; font-size: 1.2rem; line-height: 1.5; color: var(--rosa); }
 
-    100% {
-        transform: rotate(360deg);
-    }
+/* ---------- PÁGINA 3: polaroides ---------- */
+.cabecalho { padding: 40px 20px 8px; text-align: center; }
+.cabecalho h1 { font-size: clamp(1.8rem, 6vw, 2.8rem); }
+.dica { margin-top: 10px; color: #b98aa1; font-style: italic; font-size: .95rem; }
+
+#mural { position: relative; width: 100%; max-width: 1100px; margin: 0 auto; }
+
+.polaroid {
+  position: absolute;
+  background: var(--papel);
+  padding: 8px 8px 0;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, .7), 0 0 0 1px rgba(240, 166, 200, .15);
+  transform: rotate(var(--r, 0deg));
+  transition: transform .25s ease, box-shadow .25s ease;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.polaroid img { display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover; background: #e9d3dd; }
+.polaroid figcaption {
+  font-family: var(--mao);
+  font-size: 1.35rem;
+  line-height: 1.1;
+  color: var(--tinta);
+  text-align: center;
+  padding: 8px 4px 10px;
+  min-height: 2.6em;
+  display: flex; align-items: center; justify-content: center;
+}
+.polaroid.ativa {
+  z-index: 50;
+  transform: rotate(0deg) scale(var(--zoom, 1.4));
+  box-shadow: 0 12px 40px rgba(255, 95, 162, .45);
+}
+.rodape { display: flex; justify-content: center; padding: 30px 20px 60px; }
+
+/* ---------- PÁGINA 4: carrossel ---------- */
+.carrossel-wrap { width: 100%; display: flex; flex-direction: column; align-items: center; gap: 22px; }
+.carrossel { width: min(88vw, 420px); overflow: hidden; padding: 14px 0; touch-action: pan-y; }
+.trilho { display: flex; }
+.slide { flex: 0 0 100%; display: flex; justify-content: center; }
+.slide .polaroid { position: relative; width: 82%; cursor: default; }
+.slide:nth-child(odd) .polaroid { --r: -2.5deg; }
+.slide:nth-child(even) .polaroid { --r: 2.5deg; }
+.controles { display: flex; align-items: center; gap: 22px; }
+.seta {
+  width: 46px; height: 46px; border-radius: 50%;
+  background: transparent; color: var(--rosa);
+  border: 2px solid var(--rosa); font-size: 1.3rem; cursor: pointer;
+  transition: background .2s, color .2s;
+}
+.seta:hover { background: var(--rosa); color: var(--preto); }
+.contador { font-family: var(--titulo); color: var(--rosa); min-width: 56px; text-align: center; }
+
+/* ---------- PÁGINA 5: carta ---------- */
+.carta { padding: 48px 20px 60px; display: flex; flex-direction: column; align-items: center; gap: 28px; }
+.folha {
+  width: min(92vw, 560px);
+  background: var(--superficie);
+  border: 1px solid var(--rosa-forte);
+  border-radius: 6px;
+  padding: clamp(24px, 6vw, 44px);
+  box-shadow: 0 0 30px rgba(240, 166, 200, .15);
+}
+.folha p { font-size: 1.12rem; line-height: 1.75; margin-bottom: 1.1em; color: #f7e6ee; }
+.assinatura { font-family: var(--mao); font-size: 2rem; color: var(--rosa); text-align: right; margin-top: 8px; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: .01s !important; animation-delay: 0s !important; transition-duration: .01s !important; }
 }
