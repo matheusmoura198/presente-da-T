@@ -1,0 +1,3 @@
+Coloque suas fotos aqui (jpg, png...).
+Depois, no arquivo config.js, use o nome delas em "src", por exemplo: "imagens/nos-dois.jpg".
+Enquanto uma foto não existir, o site mostra um quadradinho rosa no lugar.
