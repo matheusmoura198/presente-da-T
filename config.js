@@ -23,14 +23,14 @@ const CONFIG = {
     dica: "Toque em uma foto para ver maior",
     botaoContinuar: "Continuar",
     fotos: [
-      { src: "imagens/foto1.jpg", legenda: "Escreva uma legenda" },
-      { src: "imagens/foto2.jpg", legenda: "Escreva uma legenda" },
-      { src: "imagens/foto3.jpg", legenda: "Escreva uma legenda" },
-      { src: "imagens/foto4.jpg", legenda: "Escreva uma legenda" },
-      { src: "imagens/foto5.jpg", legenda: "Escreva uma legenda" },
-      { src: "imagens/foto6.jpg", legenda: "Escreva uma legenda" },
-      { src: "imagens/foto7.jpg", legenda: "Escreva uma legenda" },
-      { src: "imagens/foto8.jpg", legenda: "Escreva uma legenda" }
+      { src: "imagens/foto1.jpg", legenda: "legenda" },
+      { src: "imagens/foto2.jpg", legenda: "legenda" },
+      { src: "imagens/foto3.jpg", legenda: "legenda" },
+      { src: "imagens/foto4.jpg", legenda: "egenda" },
+      { src: "imagens/foto5.jpg", legenda: "legenda" },
+      { src: "imagens/foto6.jpg", legenda: "legenda" },
+      { src: "imagens/foto7.jpg", legenda: "legenda" },
+      { src: "imagens/foto8.jpg", legenda: "legenda" }
     ]
   },
 
@@ -41,10 +41,10 @@ const CONFIG = {
     segundosPorFoto: 4,
     fotos: [
       { src: "imagens/foto1.jpg", legenda: "Como tudo começou" },
-      { src: "imagens/foto2.jpg", legenda: "Escreva uma legenda" },
-      { src: "imagens/foto3.jpg", legenda: "Escreva uma legenda" },
-      { src: "imagens/foto4.jpg", legenda: "Escreva uma legenda" },
-      { src: "imagens/foto5.jpg", legenda: "Escreva uma legenda" }
+      { src: "imagens/foto2.jpg", legenda: "legenda" },
+      { src: "imagens/foto3.jpg", legenda: "legenda" },
+      { src: "imagens/foto4.jpg", legenda: "legenda" },
+      { src: "imagens/foto5.jpg", legenda: "legenda" }
     ]
   },
 
@@ -52,11 +52,11 @@ const CONFIG = {
   carta: {
     titulo: "Pra você",
     paragrafos: [
-      "Escreva aqui o primeiro parágrafo da sua carta.",
-      "Escreva aqui o segundo parágrafo. Pode ter quantos quiser.",
+      "Primeiro parágrafo da carta.",
+      "Segundo parágrafo.",
       "Feliz aniversário!"
     ],
-    assinatura: "Com amor, seu nome",
+    assinatura: "Com amor, Matheus",
     botaoVoltar: "Ver tudo de novo"
   }
 };
